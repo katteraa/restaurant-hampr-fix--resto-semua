@@ -1,0 +1,50 @@
+{
+  "name": "movie-catalogue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start-dev": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "serve": "http=server dist",
+    "test": "karma start",
+    "e2e": "codeceptjs run --steps"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "@types/node": "^20.2.5",
+    "babel-loader": "^9.1.2",
+    "codeceptjs": "^3.4.1",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.3",
+    "eslint": "^8.40.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "html-webpack-plugin": "^5.5.1",
+    "http-server": "^14.1.1",
+    "karma": "^6.4.2",
+    "puppeteer": "^20.4.0",
+    "style-loader": "^3.3.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4",
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "idb": "^7.1.1",
+    "jasmine-ajax": "^4.0.0",
+    "jasmine-core": "^4.2.0",
+    "karma-chrome-launcher": "^3.1.1",
+    "karma-eslint": "^2.2.0",
+    "karma-jasmine": "^4.0.2",
+    "karma-sourcemap-loader": "^0.3.8",
+    "karma-webpack": "^5.0.0",
+    "regenerator-runtime": "^0.13.11"
+  }
+}

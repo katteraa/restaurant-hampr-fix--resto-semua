@@ -1,0 +1,25 @@
+{
+    "start_url": "./index.html",
+    "name": "D'Six Taste Lite",
+    "short_name": "D'Six Lite",
+    "description": "Find Your Taste",
+    "display": "standalone",
+    "background_color": "#FFFFFF",
+    "theme_color": "#90602db5",
+    "icons": [
+     
+      {
+        "src": "/icons/icon-96x96.png",
+        "sizes": "96x96",
+        "type": "image/png",
+        "purpose": "any"
+      },
+     
+      {
+        "src": "/icons/icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any"
+      }
+    ]
+  }
