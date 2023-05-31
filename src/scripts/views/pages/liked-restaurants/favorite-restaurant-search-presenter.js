@@ -1,5 +1,6 @@
 class FavoriteRestaurantSearchPresenter {
-    constructor({ favoriteRestaurants }) {
+    constructor({ favoriteRestaurants, view }) {
+      this._view = view;
       this._listenToSearchRequestByUser();
       this._favoriteRestaurants = favoriteRestaurants;
     }
@@ -12,21 +13,33 @@ class FavoriteRestaurantSearchPresenter {
     }
 
     async _searchRestaurants(latestQuery) {
-        this._latestQuery = latestQuery;
-        const foundRestaurants = await this._favoriteRestaurants.searchRestaurants(this.latestQuery);
+        this._latestQuery = latestQuery.trim();
 
-    this._showFoundRestaurants(foundRestaurants);
+let foundRestaurants;
+if (this.latestQuery.length > 0) {
+  foundRestaurants = await this._favoriteRestaurants.searchRestaurants(this.latestQuery);
+} else {
+  foundRestaurants = await this._favoriteRestaurants.getAllRestaurants();
+}
+        foundRestaurants ? this._showFoundRestaurants(foundRestaurants) : '';
       }
     
       _showFoundRestaurants(restaurants) {
-        const html = restaurants.reduce(
-          (carry, restaurant) => carry.concat(`<li class="restaurant"><span class="restaurant__title">${restaurant.name || '-'}</span></li>`),
-          '',
-        );
+       /* let html;
+
+        if (restaurants.length > 0) {
+          html = restaurants.reduce(
+            (carry, restaurant) => carry.concat(`<li class="restaurant"><span class="restaurant__title">${restaurant.name || '-'}</span></li>`),
+            '',
+          );
+        } else {
+          html = '<div class="restaurants__not__found">Restaurant tidak ditemukan</div>';
+        }
     
         document.querySelector('.restaurants').innerHTML = html;
         document.getElementById('restaurant-search-container')
-      .dispatchEvent(new Event('restaurants:searched:updated'));
+      .dispatchEvent(new Event('restaurants:searched:updated'));*/
+      this._view.showFavoriteRestaurants(restaurants);
       }
   
     get latestQuery() {

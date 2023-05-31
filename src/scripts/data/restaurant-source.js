@@ -1,14 +1,14 @@
 import API_ENDPOINT from '../globals/api-endpoint';
 
 class RestaurantSource {
-  static async getResto() {
+  static async getRestaurant() {
     const response = await fetch(API_ENDPOINT.RESTO);
     const responseJson = await response.json();
 
     return responseJson.restaurants;
   }
 
-  static async detailResto(id) {
+  static async detailRestaurant(id) {
     const response = await fetch(API_ENDPOINT.RESTO_DETAIL(id));
     const responseJson = await response.json();
 

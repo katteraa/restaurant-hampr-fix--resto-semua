@@ -130,7 +130,7 @@
     min-height: 44px;
   }
 
-  
+
    
   /*
     Main Content
@@ -140,6 +140,7 @@
     padding: 20px 40px 40px;
     box-sizing: border-box;
     width: 100%;
+    
   }
    
   .content .content__heading {
@@ -153,7 +154,6 @@
   /*
     restos
   */
-   
   
   /*
     resto Item
@@ -164,6 +164,10 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 32px 0;
     
   }
    
@@ -175,12 +179,13 @@
     width: 100%;
   }
    
- /* .resto-item .resto-item__header .resto-item__header__rating {
+  .resto-item .resto-item__header .resto-item__header__rating {
+    position: absolute;
     padding: 8px;
     margin-bottom: 200px;
     left: 0;
     display: inline-block;
-    background-color: rgba(255, 253, 253, 0);
+    background-color: rgba(0, 0, 0, 0.547);
     color: white;
     min-width: 44px;
     min-height: 44px;

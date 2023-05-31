@@ -13,15 +13,15 @@ const Home = {
     <section class="content">
     <h1>Explore Restaurant</h1>
     <h3>lets pick!</h3>
-    <div id="list-resto" class="list-resto">
+    <div id="restaurants" class="restaurants">
     </div>
   </section>
     `;
   },
 
   async afterRender() {
-    const restaurants = await RestaurantSource.getResto();
-    const restaurantsContainer = document.querySelector('#list-resto');
+    const restaurants = await RestaurantSource.getRestaurant();
+    const restaurantsContainer = document.querySelector('#restaurants');
     restaurants.forEach((restaurant) => {
       restaurantsContainer.innerHTML += createRestoItemTemplate(restaurant);
 

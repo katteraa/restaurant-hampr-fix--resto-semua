@@ -29,7 +29,7 @@
       margin: 0;
     }
    
-    .list-resto {
+    .restaurants {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
@@ -68,7 +68,7 @@
   }
    
   @media screen and (min-width: 850px) {
-    .list-resto {
+    .restaurants {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 16px;
@@ -84,7 +84,7 @@
   }
    
   @media screen and (min-width: 1200px) {
-    .list-resto {
+    .restaurants {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;

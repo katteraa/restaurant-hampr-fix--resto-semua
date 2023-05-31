@@ -9,7 +9,7 @@ const Detail = {
     return `
     <div class = "detail-contain">
     <a href="#content-heading" class="skip-link">Skip to content</a>
-    <div id="resto-detail" class="resto-detail"></div>
+    <div id="restaurant" class="restaurant"></div>
     <div id="likeButtonContainer"></div>
     </div>
     `;
@@ -17,21 +17,21 @@ const Detail = {
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const detail = await RestaurantSource.detailResto(url.id);
-    const restoContainer = document.querySelector('#resto-detail');
-    restoContainer.innerHTML = createRestoDetailTemplate(detail);
+    const restaurant = await RestaurantSource.detailRestaurant(url.id);
+    const restaurantsContainer = document.querySelector('#restaurant');
+    restaurantsContainer.innerHTML = createRestoDetailTemplate(restaurant);
 
     // TODO: tampilkan movie di dalam DOM
     LikeButtonPresenter.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       favoriteRestaurants: FavoriteRestaurantIdb,
       restaurant: {
-        id: detail.id,
-        name: detail.name,
-        city: detail.city,
-        description: detail.description,
-        pictureId: detail.pictureId,
-        rating: detail.rating,
+        id: restaurant.id,
+        name: restaurant.name,
+        city: restaurant.city,
+        description: restaurant.description,
+        pictureId: restaurant.pictureId,
+        rating: restaurant.rating,
       },
     });
   },
